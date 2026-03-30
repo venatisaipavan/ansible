@@ -9,9 +9,9 @@
   tasks:
    - name: Install the packages using loops
      ansible.builtin.dnf:
-      name: {{ "item" }}
+      name: "{{ item }}"
       state: present
-     loop: {{ "packages" }}
+     loop: "{{ packages }}"
    - name: Start and enable service
      ansible.builtin.service:
       name: httpd
