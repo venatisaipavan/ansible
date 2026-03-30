@@ -1,0 +1,10 @@
+---
+- name: Nginx Removal
+  hosts: all
+  become: true
+  tasks:
+   - name: Uninstall
+     ansible.builtin.dnf:
+      name: nginx
+      state: absent
+      
