@@ -7,9 +7,9 @@
      ansible.builtin.dnf:
       name: nginx
       state: present
-   - name: Install Tomcat
+   - name: Nginx enable and start
      ansible.builtin.service:
-      name: Tomcat
+      name: nginx
       state: started
-      enabled: yes
+      enabled: true
 ...
