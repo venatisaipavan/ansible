@@ -1,5 +1,5 @@
 - name: Ping check
   hosts: frontend
   tasks: 
-  - name: Ping check
+  - name: Ping check all
     ansible.builtin.ping:
