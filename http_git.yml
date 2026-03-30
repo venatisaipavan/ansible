@@ -6,12 +6,11 @@
    - name: Https Install
      ansible.builtin.dnf:
       name:
-        -httpd
-        -git
+        - httpd
+        - git
       state: present
    - name: Service start and enable
      ansible.builtin.service:
       name: httpd
       state: started
-      enabled: yes
-      
+      enabled: true
