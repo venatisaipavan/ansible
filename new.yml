@@ -11,5 +11,5 @@
      ansible.builtin.service:
       name: Tomcat
       state: started
-      enabled: true
+      enabled: yes
 ---
