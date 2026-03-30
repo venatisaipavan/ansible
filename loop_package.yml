@@ -11,7 +11,7 @@
      ansible.builtin.dnf:
       name: {{ "item" }}
       state: present
-     loop: {{ "item" }}
+     loop: {{ "packages" }}
    - name: Start and enable service
      ansible.builtin.service:
       name: httpd
