@@ -1,11 +1,13 @@
 ---
 - name: HTTPS AND GIT INSTALL
   hosts: all
-  become: yes
+  become: true
   tasks:
    - name: Https Install
      ansible.builtin.dnf:
-      name: httpd git
+      name: 
+        - httpd 
+        - git
       state: present
    - name: Service start and enable
      ansible.builtin.service:
