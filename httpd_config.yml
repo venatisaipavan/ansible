@@ -1,0 +1,19 @@
+---
+- name: Httpd Configuration
+  hosts: all
+  become: true
+  tasks:
+   - name: Httpd install
+     ansible.builtin.dnf:
+      name: httpd
+      state: present
+   - name: Services enable
+     ansible.builtin.service:
+      name: httpd
+      state: started
+      enabled: true
+   - name: Copy html
+     ansible.builtin.copy:
+      dest: /var/www/html/index.html
+      content: "Hello from Ansible"
+      mode: 0644
