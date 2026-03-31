@@ -1,0 +1,26 @@
+# Create a playbook that:
+
+# 1.Runs on localhost.
+# 2.Defines a variable my_package with value curl.
+# 3.Installs the package using that variable.
+# 4.Runs a command whoami and saves the output to a variable.
+# 5.Prints the value of the registered variable.
+
+- name: Playbook To install package and run whoami and save it
+  hosts: localhost
+  become: yes
+  vars:
+   package:
+    - curl
+  tasks:
+   - name: Install curl package
+     ansible.builtin.package:
+      name: "curl"
+      state: present
+   - name: Run whoami command
+     ansible.builtin.command:
+       whoami
+     register: user
+   - name: print user
+     ansible.builtin.debug:
+      var: user.stdout
