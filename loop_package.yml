@@ -12,6 +12,7 @@
       name: "{{ item }}"
       state: present
      loop: "{{ packages }}"
+
    - name: Start and enable service
      ansible.builtin.service:
       name: httpd

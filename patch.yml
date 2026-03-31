@@ -1,0 +1,8 @@
+- name: Patch OperatingSystem
+  hosts: all
+  become: yes
+  tasks:
+   - name: Patch the server
+     ansible.builtin.patch:
+      state: present
+      
