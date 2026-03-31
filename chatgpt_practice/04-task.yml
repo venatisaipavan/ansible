@@ -1,0 +1,21 @@
+# Create a playbook that does the following on your RHEL machine:
+
+# 1.Runs on localhost.
+# 2.Installs multiple packages: git, curl, and vim using a loop.
+# 3.Prints a message only if the OS is RHEL (use ansible_facts['distribution']).
+
+- name: Install packages using loop
+  hosts: localhost
+  become: yes
+  vars:
+   pacakges
+    - git
+    - curl
+    - vim
+  tasks:
+   - name: Install packages
+     ansible.builtin.dnf:
+      name: "{{ item }}"
+      state: present
+     loop: "{{ packages }}""
+    when: "ansible_os_family": "RedHat"
