@@ -13,15 +13,15 @@
      ansible.builtin.dnf:
       name: nginx
       state: present
-      
+
    - name: Copy local nginx to server 
      ansible.builtin.copy:
       src: nginx.conf
       dest: /etc/nginx/nginx.conf
-     notify: Resart Nginx
+     notify: Restart Nginx
 
   handlers:
-    - name: restart nginx
+    - name: Restart Nginx
       ansible.builtin.service:
         name: nginx
         state: restarted
