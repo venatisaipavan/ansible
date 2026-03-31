@@ -1,0 +1,11 @@
+- name: Create a file with Welcome message
+  hosts: all
+  become: yes
+  tasks:
+   - name: File Craetion with welcome message
+     ansible.builtin.copy:
+      dest: /var/log/saipavan/message.txt
+      content: |
+       - Hi Everyone!
+       - Learn Ansible to simplify tasks
+      
