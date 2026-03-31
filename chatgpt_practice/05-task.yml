@@ -1,0 +1,23 @@
+# Create a playbook that does the following on your RHEL machine:
+
+# 1.Runs on localhost.
+# 2.Copies a configuration file nginx.conf from your local machine to /etc/nginx/nginx.conf.
+# 3.Only restarts the nginx service if the file was changed.
+# 4.Uses a handler to restart the service.
+
+- name: Playbook to Configure Nginx
+  hosts: localhost
+  become: yes
+  tasks:
+   - name: Copy local nginx to server 
+     ansible.builtin.copy:
+      src: nginx.conf
+      dest: /etc/nginx/nginx.conf
+     notify: Resart Nginx
+
+  handlers:
+    - name: restart nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+     
