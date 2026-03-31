@@ -6,6 +6,5 @@
      ansible.builtin.copy:
       dest: /var/log/saipavan/message.txt
       content: |
-       - Hi Everyone!
-       - Learn Ansible to simplify tasks
-      
+       Hi Everyone!
+       Learn Ansible to simplify tasks
