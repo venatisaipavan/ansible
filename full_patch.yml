@@ -1,0 +1,18 @@
+- name: Patch OperatingSystem (dry-run)
+  hosts: all
+  become: true
+  gather_facts: yes
+  tasks:
+    - name: Show packages to be updated (dry-run)
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        security: false
+        exclude:
+          - kernel
+      check_mode: yes
+      register: patch_preview
+
+    - name: Print preview of updates
+      ansible.builtin.debug:
+        var: patch_preview
