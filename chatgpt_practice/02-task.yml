@@ -1,0 +1,18 @@
+# Create a playbook that:
+# 1. Runs on localhost.
+# 2. Creates a directory /tmp/demo_dir.
+# 3. Installs the curl package using yum or dnf.
+# 4. Uses privilege escalation (become: yes) for tasks that require root.
+
+- name: Playbook to install Curl
+  hosts: localhost
+  become: yes
+  tasks:
+   - name: Create demo directory
+     ansible.builtin.file:
+      path: /tmp/demo_dir
+      state: directory
+   - name: Install Curl package
+     ansible.builtin.dnf:
+      name: "curl"
+      state: present
