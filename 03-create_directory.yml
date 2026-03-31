@@ -1,0 +1,9 @@
+- name: Create a directrory
+  hosts: all
+  become: yes
+  tasks:
+   - name: Create Test Directory
+     ansible.builtin.file:
+      path: /var/log/saipavan
+      state: directory
+
