@@ -15,7 +15,7 @@
   tasks:
    - name: Install curl package
      ansible.builtin.package:
-      name: "curl"
+      name: "package"
       state: present
    - name: Run whoami command
      ansible.builtin.command:
