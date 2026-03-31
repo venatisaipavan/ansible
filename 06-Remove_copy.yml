@@ -4,7 +4,7 @@
   tasks:
    - name: Remove a file
      ansible.builtin.file:
-      src: /var/log/saipavan/Messagefile
+      path: /var/log/saipavan/Messagefile
       state: absent
    - name: Message file copying
      ansible.builtin.copy:
