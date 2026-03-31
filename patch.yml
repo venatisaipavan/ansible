@@ -6,3 +6,4 @@
      ansible.builtin.dnf:
       name: "*"
       state: latest
+      security: true
