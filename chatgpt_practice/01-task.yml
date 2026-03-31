@@ -1,0 +1,12 @@
+# Create a simple playbook that does the following:
+# 1. Runs on localhost.
+# 2. Does not gather facts.
+# 3. Prints a message “Hello, Ansible!”.
+
+- name: Playbook to Print Hello Ansible
+  hosts: localhost
+  gather_facts: no
+  tasks:
+   - name: Print Greeting Message
+     ansible.builtin.debug:
+      msg: “Hello, Ansible!”
