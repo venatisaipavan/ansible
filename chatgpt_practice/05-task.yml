@@ -9,6 +9,11 @@
   hosts: localhost
   become: yes
   tasks:
+   - name: install nginx
+     ansible.builtin.dnf:
+      name: nginx
+      state: present
+      
    - name: Copy local nginx to server 
      ansible.builtin.copy:
       src: nginx.conf
