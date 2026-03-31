@@ -8,7 +8,7 @@
   hosts: localhost
   become: yes
   vars:
-   pacakges
+   packages
     - git
     - curl
     - vim
