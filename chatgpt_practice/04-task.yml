@@ -17,5 +17,5 @@
      ansible.builtin.dnf:
       name: "{{ item }}"
       state: present
-     loop: "{{ packages }}""
+     loop: "{{ packages }}"
     when: "ansible_os_family": "RedHat"
