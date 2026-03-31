@@ -1,0 +1,8 @@
+- name: Copy file to all hosts
+  hosts: all
+  become: yes
+  tasks:
+   - name: Message file copying
+     ansible.builtin.copy:
+      src: Messagefile
+      dest: /var/log/saipavan/
