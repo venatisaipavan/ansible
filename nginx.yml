@@ -1,7 +1,0 @@
----
-- name: Install and Run nginx
-  host:
-  tasks:
-   - name: install nginx
-     ansible
-  

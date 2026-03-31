@@ -1,0 +1,8 @@
+- name: Print messages
+  hosts: all
+  tasks:
+   - name: Print Welcome message
+     ansible.builtin.debug:
+      msg: | 
+       Hi Saipavan!
+       Welcome to the world of ansible

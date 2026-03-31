@@ -1,6 +1,0 @@
-- name: Print the message
-  hosts: frontend
-  tasks:
-  - name: HEllo message print 
-    ansible.builtin.debug:
-     msg: "Hey saipavan,Welcome to the party!" 
