@@ -9,7 +9,7 @@
         state: latest
         security: false
         exclude:
-          - kernel
+          - "*kernel*"
       check_mode: yes
       register: patch_preview
 
